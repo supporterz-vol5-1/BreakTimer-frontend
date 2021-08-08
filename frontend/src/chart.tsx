@@ -12,9 +12,9 @@ class Chart extends Component {
       {x: 3, y: 9},
       {x: 4, y: 1},
       {x: 5, y: 7},
-    ];
+        ];
         return (
-            <XYPlot xType="ordinal" height={200} width={200}>
+            <XYPlot xType="ordinal" height={300} width={300}>
             <VerticalGridLines />
             <HorizontalGridLines />
             <XAxis />
