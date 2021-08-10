@@ -1,28 +1,26 @@
-import React, {Component} from 'react';
-import "../node_modules/react-vis/dist/style.css"
-import {XYPlot, LineSeries,VerticalBarSeries,  VerticalGridLines, HorizontalGridLines, XAxis, YAxis} from "react-vis";
+import React, {PureComponent} from 'react';
+import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 
+const data = [
+  {x: 0, y: 8},
+  {x: 1, y: 5},
+  {x: 2, y: 4},
+  {x: 3, y: 9},
+  {x: 4, y: 1},
+  {x: 5, y: 7},
+];
 
-class Chart extends Component {
+class Chart extends PureComponent {
     render(){
-        const data = [
-      {x: 0, y: 8},
-      {x: 1, y: 5},
-      {x: 2, y: 4},
-      {x: 3, y: 9},
-      {x: 4, y: 1},
-      {x: 5, y: 7},
-        ];
         return (
-            <XYPlot xType="ordinal" height={300} width={300}>
-            <VerticalGridLines />
-            <HorizontalGridLines />
-            <XAxis />
+            <BarChart width={500} height={300} data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
+                <XAxis dataKey="x" />
                 <YAxis />
-                <VerticalBarSeries barWidth={0.5} data={data} />
-                <LineSeries data={data} />
-        </XYPlot>
-    )
+                <Tooltip />
+                <Legend />
+                <Bar dataKey='y'/>
+            </BarChart>
+        )
     }
 }
 
