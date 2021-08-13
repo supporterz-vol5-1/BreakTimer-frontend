@@ -1,15 +1,15 @@
 import react, {Component} from 'react'
-import Chart from './Chart'
+import Graph_bar from './Graph_bar'
 
 class Dashboard extends Component {
     render(){
         return(
             <div>
                 <div>header</div>
-                <Chart />
+                <Graph_bar />
            </div>
         )
     }
 }
 
-export default Chart
+export default Dashboard

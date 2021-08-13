@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 import data from './data.json'
 
-class Chart extends PureComponent {
+class Graph_bar extends PureComponent {
     dataKeys(data: any){
         var lang_list: string[] = [];
         for (var item of data) {
@@ -74,4 +74,4 @@ class Chart extends PureComponent {
 }
 
 
-export default Chart
+export default Graph_bar
