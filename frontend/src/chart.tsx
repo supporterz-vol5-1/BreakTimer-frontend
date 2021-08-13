@@ -40,7 +40,6 @@ class Chart extends PureComponent {
         var lang_list: string[] = this.dataKeys(data)
         var date: any = new Date()
         var count:number = 0
-        this.formatData(data, lang_list,date)
         return lang_list
     }
     handleColormap(lang_list: string[]){
