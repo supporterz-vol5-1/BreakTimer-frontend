@@ -8,7 +8,7 @@ const Dashboard = () =>{
     return (
         <div>
             <div>Dashboard</div>
-            <Graph_bar/>
+            <Graph_bar time_data={data}/>
        </div>
     )
 }

@@ -3,6 +3,10 @@ import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 
 
 import data from './data.json'
 
+type Props = {
+    time_data: any
+}
+
 function    dataKeys(data: any){
     var lang_list: string[] = [];
     for (var item of data) {
@@ -54,7 +58,7 @@ function handleColormap(lang_list: string[]){
     console.log(colormap)
     return colormap
 }
-const Graph_bar = () =>  {
+const Graph_bar = (props:Props) =>  {
     var lang: string[] =handleData(data)
     var color:any =handleColormap(lang)
     return (
