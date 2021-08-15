@@ -1,20 +1,9 @@
 import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend} from 'recharts'
 
 type Props = {
-    time_data: Array<Object>
-}
-
-const dataKeys = (data: any) =>{
-    var lang_list: string[] = [];
-    for (var item of data) {
-        // console.log(item)
-        Object.keys(item).forEach(key => {
-            if(!lang_list.includes(key)){
-                lang_list.push(key)
-            }
-        })
-    }
-    return lang_list
+    time_data: Array<Object>,
+    lang: string[],
+    colormap: Array<Object>
 }
 
 const formatDate = (date: any)=> {
@@ -36,24 +25,12 @@ const formatData=(data: any)=>{
     return formattedData
 }
 
-const handleColormap = (lang_list: string[]) =>{
-    var colormap: any = {}
-    var colorkey: string[] = ["#80DEEA", "#29B6F6","#4DB6AC","#00BCD4"]
-    var count: number = 1;
-    for (var item of lang_list) {
-        // console.log(colorkey[count % colorkey.length])
-        count++;
-        colormap[item] = colorkey[count % colorkey.length]
-    }
-    // console.log(colormap)
-    return colormap
-}
+
 const GraphBar = (props: Props) => {
     const time_data =JSON.parse(JSON.stringify(props.time_data))
-    // const dataInfo: any = handleData(time_data)
-    const lang: string[] = dataKeys(time_data)
+    const lang: string[] = props.lang
     const graph_data: any =formatData(time_data)
-    const color:any =handleColormap(lang)
+    const color:any = props.colormap
     return (
         <BarChart width={500} height={300} data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
             <XAxis dataKey='date' interval={0}/>
