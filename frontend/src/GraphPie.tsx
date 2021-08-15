@@ -1,9 +1,9 @@
 import React from "react"
 
-const GraphCircle = () =>{
+const GraphPie = () =>{
     return(
         <div> aaaa </div>
     ) 
 }
 
-export default GraphCircle
+export default GraphPie
