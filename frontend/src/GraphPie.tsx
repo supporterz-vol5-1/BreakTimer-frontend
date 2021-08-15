@@ -1,9 +1,11 @@
 import React from "react"
 
-import { PieChart, Pie, Legend, Tooltip  } from "recharts"
+import { PieChart, Pie, Legend, Tooltip, Cell } from "recharts"
 
 type Props = {
-    time_data: Array<Object>
+    time_data: Array<Object>,
+    colormap: Array<Object>,
+    lang: string[]
 }
 
 type ChartData = {
@@ -29,9 +31,7 @@ const exportData = (data: Array<Object>) => {
     return dataDict
 }
 
-const GraphPie = (props: Props) => {
-    const chartdata: Array<Object> = props.time_data
-    var data = exportData(chartdata)
+const formantData = (data:{[name: string]: number}) =>{
     var tmp: ChartData;
     var formattedData: Array<ChartData> = []
     Object.entries(data).forEach(([key, value]) => {
@@ -43,9 +43,24 @@ const GraphPie = (props: Props) => {
         formattedData.push(tmp)
     })
     // console.log(formattedData)
+    return formattedData
+}
+
+const GraphPie = (props: Props) => {
+    const chartdata: Array<Object> = props.time_data
+    const colormap: any = props.colormap
+    const lang: string[] = props.lang
+    var data = exportData(chartdata)
+    const formattedData = formantData(data)
     return (
         <PieChart width={400} height={500}>
-            <Pie data={formattedData} dataKey="time" nameKey='lang' outerRadius={100} label/>
+            <Pie data={formattedData} dataKey="time" nameKey='lang' outerRadius={100} label>
+            {
+                lang.map(key => (
+                    < Cell key = {key} fill = {colormap[key]} />
+            ))
+            }
+            </Pie>
         </PieChart>
     ) 
 }
