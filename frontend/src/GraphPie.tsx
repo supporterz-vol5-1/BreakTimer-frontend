@@ -55,6 +55,8 @@ const GraphPie = (props: Props) => {
     return (
         <PieChart width={400} height={500}>
             <Pie data={formattedData} dataKey="time" nameKey='lang' outerRadius={100} label>
+            <Legend />
+            <Tooltip />
             {
                 lang.map(key => (
                     < Cell key = {key} fill = {colormap[key]} />
