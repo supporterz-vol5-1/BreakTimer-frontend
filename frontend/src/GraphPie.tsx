@@ -35,14 +35,14 @@ const GraphPie = (props: Props) => {
     var tmp: ChartData;
     var formattedData: Array<ChartData> = []
     Object.entries(data).forEach(([key, value]) => {
-        console.log(key, value)
+        // console.log(key, value)
         tmp = {
             lang : key,
             time: value
         }
         formattedData.push(tmp)
     })
-    console.log(formattedData)
+    // console.log(formattedData)
     return (
         <PieChart width={400} height={500}>
             <Pie data={formattedData} dataKey="time" nameKey='lang' outerRadius={100} label/>
