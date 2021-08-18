@@ -46,6 +46,10 @@ const formantData = (data:{[name: string]: number}) =>{
     return formattedData
 }
 
+const lenderLabel = (label:any) =>{
+    return label.lang +" " +  label.time
+}
+
 const GraphPie = (props: Props) => {
     const chartdata: Array<Object> = props.time_data
     const colormap: any = props.colormap
@@ -53,9 +57,9 @@ const GraphPie = (props: Props) => {
     var data = exportData(chartdata)
     const formattedData = formantData(data)
     return (
-        <PieChart width={400} height={500}>
-            <Pie data={formattedData} dataKey="time" nameKey='lang' outerRadius={100} label>
-            <Legend />
+        <PieChart width={300} height={300}>
+            <Legend verticalAlign='top' align='center'/>
+            <Pie data={formattedData} dataKey="time" nameKey='lang'outerRadius={100} label={lenderLabel} >
             <Tooltip />
             {
                 lang.map(key => (
