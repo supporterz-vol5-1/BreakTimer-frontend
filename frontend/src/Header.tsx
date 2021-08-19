@@ -3,9 +3,10 @@ import './Header.css'
 
 class Header extends Component{
     render(){
-        return(
+        return (
             <div className='header'>
-                <div className='headertitle'>header</div>
+                    <div className='headertitle'>header</div>
+                    <input type='text' />
             </div>
         )
     }
