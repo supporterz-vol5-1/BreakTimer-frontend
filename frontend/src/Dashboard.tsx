@@ -1,7 +1,6 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 import GraphBar from './GraphBar'
 import GraphPie from './GraphPie'
-
 import './Dashboard.css'
 
 import data from './data.json'
@@ -37,7 +36,7 @@ const Dashboard = () => {
     // console.log(colormap)
     return (
         <div>
-            <div className={title}>Dashboard</div>
+            <div className='title'>Dashboard</div>
             <GraphBar key='GraphBar' time_data={timedata} lang={lang} colormap={colormap}/>
             <GraphPie time_data={timedata} lang={lang}colormap={colormap}/>
        </div>

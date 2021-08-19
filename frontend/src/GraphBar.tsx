@@ -1,3 +1,4 @@
+import React from 'react';
 import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend} from 'recharts'
 
 type Props = {
