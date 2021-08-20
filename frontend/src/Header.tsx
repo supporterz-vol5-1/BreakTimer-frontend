@@ -5,8 +5,8 @@ class Header extends Component{
     render(){
         return (
             <div className='header'>
-                    <div className='headertitle'>header</div>
-                    <input type='text' />
+                    <div className='headerelement' id='appname'>header</div>
+                    <input className='headerelement' type='text' />
             </div>
         )
     }
