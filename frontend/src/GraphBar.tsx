@@ -1,5 +1,5 @@
 import React from 'react';
-import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend} from 'recharts'
+import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 
 type Props = {
     time_data: Array<Object>,
@@ -31,19 +31,25 @@ const GraphBar = (props: Props) => {
     const time_data =JSON.parse(JSON.stringify(props.time_data))
     const lang: string[] = props.lang
     const graph_data: any =formatData(time_data)
-    const color:any = props.colormap
+    const color: any = props.colormap
     return (
-        <BarChart width={500} height={300} data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
-            <XAxis dataKey='date' interval={0}/>
-            <YAxis />
-            <Legend />
-            <Tooltip />
-            {
-                lang.map(key => (
-                    <Bar dataKey={key} stackId="a" fill={color[key]}/>
-                ))
-            }
-        </BarChart>
+        // <div style={{paddingBottom:'50%', position:"relative", height:0}}>
+        // <div style={{position: 'absolute', top:'0', left:'0', width:"100%", height:"100%"}}>
+        // <ResponsiveContainer width={500} height={300}>
+            <BarChart width={500} height={300} data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
+                <XAxis dataKey='date' interval={0}/>
+                <YAxis />
+                <Legend />
+                <Tooltip />
+                {
+                    lang.map(key => (
+                        <Bar dataKey={key} stackId="a" fill={color[key]}/>
+                    ))
+                }
+                </BarChart>
+        // </ResponsiveContainer>
+        // </div>
+        // </div>
     )
 }
 
