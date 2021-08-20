@@ -1,3 +1,7 @@
 .title{
     color: green;
 }
+
+.recharts-wrapper{
+    display:inline-block;
+}

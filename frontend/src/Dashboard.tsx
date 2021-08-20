@@ -37,9 +37,9 @@ const Dashboard = () => {
     return (
         <div>
             <div className='title'>Dashboard</div>
-            <GraphBar key='GraphBar' time_data={timedata} lang={lang} colormap={colormap}/>
-            <GraphPie time_data={timedata} lang={lang}colormap={colormap}/>
-       </div>
+                <GraphBar key='GraphBar' time_data={timedata} lang={lang} colormap={colormap} />
+                <GraphPie time_data={timedata} lang={lang} colormap={colormap} />
+        </div>
     )
 }
 
