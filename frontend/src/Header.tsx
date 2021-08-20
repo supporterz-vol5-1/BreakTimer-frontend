@@ -6,7 +6,7 @@ class Header extends Component{
         return (
             <div className='header'>
                     <div className='headerelement' id='appname'>Break Timer</div>
-                    <input className='headerelement' type='text' />
+                    <input className='headerelement' type='text' placeholder='username'/>
             </div>
         )
     }
