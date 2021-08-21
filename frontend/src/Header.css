@@ -5,17 +5,30 @@
     position: relative;
 }
 
-#appname.headerelement{
-    font-size:40px;
+.headerelement{
     display:inline-block;
 }
 
-input.headerelement{
+#appname.headerelement{
+    font-size:40px;
+}
+
+#inputs.headerelement{
+    position:relative;
+    left: 50%;
+}
+
+.headerinput{
     height: 40%;
     width: 200px;
     vertical-align: middle;
-    position: relative;
-    left: 50%;
     font-size: 100%;
     margin-bottom: 15px;
+}
+
+.headerbutton{
+    height: 40%;
+    width: 50px;
+    vertical-align: middle;
+    margin-bottom:15px;
 }
