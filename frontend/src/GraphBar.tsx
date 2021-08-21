@@ -2,9 +2,9 @@ import React from 'react';
 import {BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 
 type Props = {
-    time_data: Array<Object>,
+    time_data: array<object>,
     lang: string[],
-    colormap: Array<Object>
+    colormap: array<object>
 }
 
 const formatDate = (date: any)=> {

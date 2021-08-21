@@ -7,7 +7,7 @@ function App() {
     const [username, setUsername] = useState("")
     return (
         <div>
-            <Header />
+            <Header setUsername={setUsername}/>
             <Dashboard />
         </div>
   );
