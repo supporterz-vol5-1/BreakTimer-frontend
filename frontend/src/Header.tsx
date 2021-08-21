@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import './Header.css'
 
-class Header extends Component{
-    render(){
+const Header = () => {
         return (
             <div className='header'>
                 <div className='headerelement' id='appname'>Break Timer</div>
@@ -12,7 +11,6 @@ class Header extends Component{
                 </div>
             </div>
         )
-    }
 }
 
 export default Header
