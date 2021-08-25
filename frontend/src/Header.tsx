@@ -1,4 +1,4 @@
-import React, {Component, useRef} from 'react'
+import React, {Component, useRef, MutableRefObject} from 'react'
 import './Header.css'
 
 type Props = {
@@ -6,13 +6,14 @@ type Props = {
 }
 
 const Header = (props: Props) => {
-    const username = useRef('')
+    let username = useRef() as MutableRefObject<HTMLInputElement>
+    const setUsername = props.setUsername
     return (
         <div className='header'>
             <div className='headerelement' id='appname'>Break Timer</div>
             <div className='headerelement' id='inputs'>
                 <input className='headerinput' type='text' placeholder='username' ref={username}/>
-                <button className='headerbutton' onClick={()=>{console.log(username.current.value)}}>enter</button>
+                <button className='headerbutton' onClick={()=>{setUsername(username.current.value)}}>enter</button>
             </div>
         </div>
     )
