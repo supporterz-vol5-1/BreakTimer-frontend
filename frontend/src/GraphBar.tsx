@@ -35,8 +35,8 @@ const GraphBar = (props: Props) => {
     return (
         // <div style={{paddingBottom:'50%', position:"relative", height:0}}>
         // <div style={{position: 'absolute', top:'0', left:'0', width:"100%", height:"100%"}}>
-        // <ResponsiveContainer width={500} height={300}>
-            <BarChart width={500} height={300} data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
+        <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
                 <XAxis dataKey='date' interval={0}/>
                 <YAxis />
                 <Legend />
@@ -47,7 +47,7 @@ const GraphBar = (props: Props) => {
                     ))
                 }
                 </BarChart>
-        // </ResponsiveContainer>
+        </ResponsiveContainer>
         // </div>
         // </div>
     )

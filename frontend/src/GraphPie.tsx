@@ -1,6 +1,6 @@
 import React from "react"
 
-import { PieChart, Pie, Legend, Tooltip, Cell } from "recharts"
+import { PieChart, Pie, Legend, Tooltip, Cell, ResponsiveContainer } from "recharts"
 
 type Props = {
     time_data: Array<Object>,
@@ -57,17 +57,19 @@ const GraphPie = (props: Props) => {
     var data = exportData(chartdata)
     const formattedData = formantData(data)
     return (
-        <PieChart width={450} height={300}>
-            <Legend verticalAlign='top' align='center'/>
-            <Pie data={formattedData} dataKey="time" nameKey='lang'outerRadius={100} label={lenderLabel} >
-            <Tooltip />
-            {
-                lang.map(key => (
-                    < Cell key = {key} fill = {colormap[key]} />
-            ))
-            }
-            </Pie>
-        </PieChart>
+        <ResponsiveContainer width="100%" height={400}>
+            <PieChart >
+                <Legend verticalAlign='top' align='center'/>
+                <Pie data={formattedData} dataKey="time" nameKey='lang'outerRadius={100} label={lenderLabel} >
+                <Tooltip />
+                {
+                    lang.map(key => (
+                        < Cell key = {key} fill = {colormap[key]} />
+                ))
+                }
+                </Pie>
+            </PieChart>
+        </ResponsiveContainer>
     ) 
 }
 
