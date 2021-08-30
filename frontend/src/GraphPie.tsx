@@ -57,7 +57,7 @@ const GraphPie = (props: Props) => {
     var data = exportData(chartdata)
     const formattedData = formantData(data)
     return (
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="50%" height={400}>
             <PieChart >
                 <Legend verticalAlign='top' align='center'/>
                 <Pie data={formattedData} dataKey="time" nameKey='lang'outerRadius={100} label={lenderLabel} >

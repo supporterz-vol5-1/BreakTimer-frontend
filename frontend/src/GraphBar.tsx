@@ -33,9 +33,7 @@ const GraphBar = (props: Props) => {
     const graph_data: any =formatData(time_data)
     const color: any = props.colormap
     return (
-        // <div style={{paddingBottom:'50%', position:"relative", height:0}}>
-        // <div style={{position: 'absolute', top:'0', left:'0', width:"100%", height:"100%"}}>
-        <ResponsiveContainer width="100%" height={300}>
+        <ResponsiveContainer width="50%" height={300}>
             <BarChart data={graph_data} margin={{top: 20, right: 30, left: 0, bottom: 0}}>
                 <XAxis dataKey='date' interval={0}/>
                 <YAxis />
@@ -46,10 +44,8 @@ const GraphBar = (props: Props) => {
                         <Bar dataKey={key} stackId="a" fill={color[key]}/>
                     ))
                 }
-                </BarChart>
+            </BarChart>
         </ResponsiveContainer>
-        // </div>
-        // </div>
     )
 }
 

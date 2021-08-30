@@ -44,8 +44,8 @@ const UserDashboard = (props: DBdata) => {
     return(
         <div>
             <div className='title'>{props.username}'s Dashboard</div>
-                <GraphBar key='GraphBar' time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
-                <GraphPie time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
+            <GraphBar key='GraphBar' time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
+            <GraphPie time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
         </div>
     )
 }
@@ -54,8 +54,8 @@ const SampleDashboard: React.VFC<DBdata> = (props: DBdata) => {
     return(
         <div>
             <div className='title'>sample Dashboard</div>
-                <GraphBar key='GraphBar' time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
-                <GraphPie time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
+            <GraphBar key='GraphBar' time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
+            <GraphPie time_data={props.timedata} lang={props.lang} colormap={props.colormap} />
         </div>
     )
 }
